@@ -5,7 +5,8 @@
 export default class Validator {
   validatePhone(phone) {
     const phoneNumber = phone.replace(/[\s-+()]/gm, '');
-    if (() => phoneNumber.test(/^\d\{11}$/)) {
+    const secondTest = /^\d{11}$/.test(phoneNumber);
+    if (secondTest) {
       return `+${phoneNumber.replace(/^8/, '7')}`;
     } return `+${phoneNumber}`;
   }
